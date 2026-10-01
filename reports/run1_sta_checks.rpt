@@ -1,0 +1,420 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: resetn (input port clocked by clk)
+Endpoint: mem_la_read (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (propagated)
+                          5.00    5.00 ^ input external delay
+                  0.04    0.03    5.03 ^ resetn (in)
+     1    0.01                           resetn (net)
+                  0.04    0.00    5.03 ^ input34/A (sky130_fd_sc_hd__buf_8)
+                  0.26    0.22    5.25 ^ input34/X (sky130_fd_sc_hd__buf_8)
+     9    0.16                           net34 (net)
+                  0.29    0.07    5.32 ^ _07619_/A (sky130_fd_sc_hd__inv_2)
+                  0.06    0.07    5.39 v _07619_/Y (sky130_fd_sc_hd__inv_2)
+     2    0.01                           _02084_ (net)
+                  0.06    0.00    5.39 v _07620_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.09    0.21    5.60 v _07620_/X (sky130_fd_sc_hd__clkbuf_4)
+    10    0.04                           _02085_ (net)
+                  0.09    0.00    5.60 v _07649_/A (sky130_fd_sc_hd__nor2_4)
+                  0.70    0.61    6.21 ^ _07649_/Y (sky130_fd_sc_hd__nor2_4)
+     5    0.12                           net96 (net)
+                  0.70    0.01    6.22 ^ output96/A (sky130_fd_sc_hd__buf_2)
+                  0.17    0.35    6.57 ^ output96/X (sky130_fd_sc_hd__buf_2)
+     1    0.03                           mem_la_read (net)
+                  0.17    0.00    6.57 ^ mem_la_read (out)
+                                  6.57   data arrival time
+
+                         25.00   25.00   clock clk (rise edge)
+                          0.00   25.00   clock network delay (propagated)
+                         -0.25   24.75   clock uncertainty
+                          0.00   24.75   clock reconvergence pessimism
+                         -5.00   19.75   output external delay
+                                 19.75   data required time
+-----------------------------------------------------------------------------
+                                 19.75   data required time
+                                 -6.57   data arrival time
+-----------------------------------------------------------------------------
+                                 13.18   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+input30/X                                10     18     -8 (VIOLATED)
+_08901_/X                                10     17     -7 (VIOLATED)
+clkbuf_leaf_11_clk/X                     10     14     -4 (VIOLATED)
+clkbuf_leaf_57_clk/X                     10     14     -4 (VIOLATED)
+_08852_/X                                10     13     -3 (VIOLATED)
+_08907_/X                                10     13     -3 (VIOLATED)
+_15362_/Q                                10     13     -3 (VIOLATED)
+_16108_/Q                                10     13     -3 (VIOLATED)
+_16334_/Q                                10     13     -3 (VIOLATED)
+clkbuf_leaf_13_clk/X                     10     13     -3 (VIOLATED)
+clkbuf_leaf_221_clk/X                    10     13     -3 (VIOLATED)
+clkbuf_leaf_50_clk/X                     10     13     -3 (VIOLATED)
+_08335_/X                                10     12     -2 (VIOLATED)
+_09413_/X                                10     12     -2 (VIOLATED)
+_09599_/X                                10     12     -2 (VIOLATED)
+_09862_/X                                10     12     -2 (VIOLATED)
+clkbuf_leaf_133_clk/X                    10     12     -2 (VIOLATED)
+clkbuf_leaf_43_clk/X                     10     12     -2 (VIOLATED)
+_08255_/X                                10     11        (VIOLATED)
+_09018_/X                                10     11        (VIOLATED)
+_09029_/X                                10     11        (VIOLATED)
+_09365_/X                                10     11        (VIOLATED)
+_09391_/X                                10     11        (VIOLATED)
+_09394_/X                                10     11        (VIOLATED)
+_09478_/X                                10     11        (VIOLATED)
+_09498_/X                                10     11        (VIOLATED)
+_09547_/X                                10     11        (VIOLATED)
+_09550_/X                                10     11        (VIOLATED)
+_09563_/X                                10     11        (VIOLATED)
+_09590_/X                                10     11        (VIOLATED)
+_09606_/X                                10     11        (VIOLATED)
+_09674_/X                                10     11        (VIOLATED)
+_09675_/X                                10     11        (VIOLATED)
+_11376_/X                                10     11        (VIOLATED)
+_12855_/X                                10     11        (VIOLATED)
+_14479_/X                                10     11        (VIOLATED)
+_14507_/X                                10     11        (VIOLATED)
+_15350_/Q                                10     11        (VIOLATED)
+_16132_/Q                                10     11        (VIOLATED)
+_16133_/Q                                10     11        (VIOLATED)
+_16135_/Q                                10     11        (VIOLATED)
+_16143_/Q                                10     11        (VIOLATED)
+clkbuf_leaf_110_clk/X                    10     11        (VIOLATED)
+clkbuf_leaf_112_clk/X                    10     11        (VIOLATED)
+clkbuf_leaf_117_clk/X                    10     11        (VIOLATED)
+clkbuf_leaf_120_clk/X                    10     11        (VIOLATED)
+clkbuf_leaf_190_clk/X                    10     11        (VIOLATED)
+clkbuf_leaf_202_clk/X                    10     11        (VIOLATED)
+clkbuf_leaf_215_clk/X                    10     11        (VIOLATED)
+clkbuf_leaf_216_clk/X                    10     11        (VIOLATED)
+clkbuf_leaf_218_clk/X                    10     11        (VIOLATED)
+clkbuf_leaf_76_clk/X                     10     11        (VIOLATED)
+clkbuf_leaf_84_clk/X                     10     11        (VIOLATED)
+clkbuf_leaf_9_clk/X                      10     11        (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 173 unannotated drivers.
+ irq[0]
+ irq[10]
+ irq[11]
+ irq[12]
+ irq[13]
+ irq[14]
+ irq[15]
+ irq[16]
+ irq[17]
+ irq[18]
+ irq[19]
+ irq[1]
+ irq[20]
+ irq[21]
+ irq[22]
+ irq[23]
+ irq[24]
+ irq[25]
+ irq[26]
+ irq[27]
+ irq[28]
+ irq[29]
+ irq[2]
+ irq[30]
+ irq[31]
+ irq[3]
+ irq[4]
+ irq[5]
+ irq[6]
+ irq[7]
+ irq[8]
+ irq[9]
+ pcpi_rd[0]
+ pcpi_rd[10]
+ pcpi_rd[11]
+ pcpi_rd[12]
+ pcpi_rd[13]
+ pcpi_rd[14]
+ pcpi_rd[15]
+ pcpi_rd[16]
+ pcpi_rd[17]
+ pcpi_rd[18]
+ pcpi_rd[19]
+ pcpi_rd[1]
+ pcpi_rd[20]
+ pcpi_rd[21]
+ pcpi_rd[22]
+ pcpi_rd[23]
+ pcpi_rd[24]
+ pcpi_rd[25]
+ pcpi_rd[26]
+ pcpi_rd[27]
+ pcpi_rd[28]
+ pcpi_rd[29]
+ pcpi_rd[2]
+ pcpi_rd[30]
+ pcpi_rd[31]
+ pcpi_rd[3]
+ pcpi_rd[4]
+ pcpi_rd[5]
+ pcpi_rd[6]
+ pcpi_rd[7]
+ pcpi_rd[8]
+ pcpi_rd[9]
+ pcpi_ready
+ pcpi_wait
+ pcpi_wr
+ picorv32_254/HI
+ picorv32_255/HI
+ picorv32_256/HI
+ picorv32_257/HI
+ picorv32_258/HI
+ picorv32_259/HI
+ picorv32_260/HI
+ picorv32_261/HI
+ picorv32_262/HI
+ picorv32_263/HI
+ picorv32_264/HI
+ picorv32_265/HI
+ picorv32_266/HI
+ picorv32_267/HI
+ picorv32_268/HI
+ picorv32_269/HI
+ picorv32_270/HI
+ picorv32_271/HI
+ picorv32_272/HI
+ picorv32_273/HI
+ picorv32_274/HI
+ picorv32_275/HI
+ picorv32_276/HI
+ picorv32_277/HI
+ picorv32_278/HI
+ picorv32_279/HI
+ picorv32_280/HI
+ picorv32_281/HI
+ picorv32_282/HI
+ picorv32_283/HI
+ picorv32_284/HI
+ picorv32_285/HI
+ picorv32_286/HI
+ picorv32_287/HI
+ picorv32_288/HI
+ picorv32_289/HI
+ picorv32_290/HI
+ picorv32_291/HI
+ picorv32_292/HI
+ picorv32_293/HI
+ picorv32_294/HI
+ picorv32_295/HI
+ picorv32_296/HI
+ picorv32_297/HI
+ picorv32_298/HI
+ picorv32_299/HI
+ picorv32_300/HI
+ picorv32_301/HI
+ picorv32_302/HI
+ picorv32_303/HI
+ picorv32_304/HI
+ picorv32_305/HI
+ picorv32_306/HI
+ picorv32_307/HI
+ picorv32_308/HI
+ picorv32_309/HI
+ picorv32_310/HI
+ picorv32_311/HI
+ picorv32_312/HI
+ picorv32_313/HI
+ picorv32_314/HI
+ picorv32_315/HI
+ picorv32_316/HI
+ picorv32_317/HI
+ picorv32_318/HI
+ picorv32_319/HI
+ picorv32_320/HI
+ picorv32_321/HI
+ picorv32_322/HI
+ picorv32_323/HI
+ picorv32_324/HI
+ picorv32_325/HI
+ picorv32_326/HI
+ picorv32_327/HI
+ picorv32_328/HI
+ picorv32_329/HI
+ picorv32_330/HI
+ picorv32_331/HI
+ picorv32_332/HI
+ picorv32_333/HI
+ picorv32_334/HI
+ picorv32_335/HI
+ picorv32_336/HI
+ picorv32_337/HI
+ picorv32_338/HI
+ picorv32_339/HI
+ picorv32_340/HI
+ picorv32_341/HI
+ picorv32_342/HI
+ picorv32_343/HI
+ picorv32_344/HI
+ picorv32_345/HI
+ picorv32_346/HI
+ picorv32_347/HI
+ picorv32_348/HI
+ picorv32_349/HI
+ picorv32_350/HI
+ picorv32_351/HI
+ picorv32_352/HI
+ picorv32_353/HI
+ picorv32_354/HI
+ picorv32_355/HI
+ picorv32_356/HI
+ picorv32_357/HI
+ picorv32_358/HI
+ picorv32_359/HI
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 54
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 106 unconstrained endpoints.
+  eoi[0]
+  eoi[10]
+  eoi[11]
+  eoi[12]
+  eoi[13]
+  eoi[14]
+  eoi[15]
+  eoi[16]
+  eoi[17]
+  eoi[18]
+  eoi[19]
+  eoi[1]
+  eoi[20]
+  eoi[21]
+  eoi[22]
+  eoi[23]
+  eoi[24]
+  eoi[25]
+  eoi[26]
+  eoi[27]
+  eoi[28]
+  eoi[29]
+  eoi[2]
+  eoi[30]
+  eoi[31]
+  eoi[3]
+  eoi[4]
+  eoi[5]
+  eoi[6]
+  eoi[7]
+  eoi[8]
+  eoi[9]
+  mem_addr[0]
+  mem_addr[1]
+  mem_la_addr[0]
+  mem_la_addr[1]
+  pcpi_insn[0]
+  pcpi_insn[10]
+  pcpi_insn[11]
+  pcpi_insn[12]
+  pcpi_insn[13]
+  pcpi_insn[14]
+  pcpi_insn[15]
+  pcpi_insn[16]
+  pcpi_insn[17]
+  pcpi_insn[18]
+  pcpi_insn[19]
+  pcpi_insn[1]
+  pcpi_insn[20]
+  pcpi_insn[21]
+  pcpi_insn[22]
+  pcpi_insn[23]
+  pcpi_insn[24]
+  pcpi_insn[25]
+  pcpi_insn[26]
+  pcpi_insn[27]
+  pcpi_insn[28]
+  pcpi_insn[29]
+  pcpi_insn[2]
+  pcpi_insn[30]
+  pcpi_insn[31]
+  pcpi_insn[3]
+  pcpi_insn[4]
+  pcpi_insn[5]
+  pcpi_insn[6]
+  pcpi_insn[7]
+  pcpi_insn[8]
+  pcpi_insn[9]
+  pcpi_valid
+  trace_data[0]
+  trace_data[10]
+  trace_data[11]
+  trace_data[12]
+  trace_data[13]
+  trace_data[14]
+  trace_data[15]
+  trace_data[16]
+  trace_data[17]
+  trace_data[18]
+  trace_data[19]
+  trace_data[1]
+  trace_data[20]
+  trace_data[21]
+  trace_data[22]
+  trace_data[23]
+  trace_data[24]
+  trace_data[25]
+  trace_data[26]
+  trace_data[27]
+  trace_data[28]
+  trace_data[29]
+  trace_data[2]
+  trace_data[30]
+  trace_data[31]
+  trace_data[32]
+  trace_data[33]
+  trace_data[34]
+  trace_data[35]
+  trace_data[3]
+  trace_data[4]
+  trace_data[5]
+  trace_data[6]
+  trace_data[7]
+  trace_data[8]
+  trace_data[9]
+  trace_valid

@@ -1,0 +1,878 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: resetn (input port clocked by clk)
+Endpoint: mem_la_read (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (propagated)
+                          5.00    5.00 ^ input external delay
+                  0.04    0.03    5.03 ^ resetn (in)
+     1    0.01                           resetn (net)
+                  0.04    0.00    5.03 ^ input34/A (sky130_fd_sc_hd__buf_8)
+                  0.26    0.23    5.26 ^ input34/X (sky130_fd_sc_hd__buf_8)
+    18    0.16                           net34 (net)
+                  0.28    0.05    5.32 ^ _07619_/A (sky130_fd_sc_hd__inv_2)
+                  0.06    0.07    5.38 v _07619_/Y (sky130_fd_sc_hd__inv_2)
+     2    0.01                           _02084_ (net)
+                  0.06    0.00    5.38 v _07620_/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.09    0.21    5.59 v _07620_/X (sky130_fd_sc_hd__clkbuf_4)
+    10    0.04                           _02085_ (net)
+                  0.09    0.00    5.59 v _07649_/A (sky130_fd_sc_hd__nor2_4)
+                  0.68    0.59    6.18 ^ _07649_/Y (sky130_fd_sc_hd__nor2_4)
+     4    0.11                           net96 (net)
+                  0.68    0.01    6.19 ^ output96/A (sky130_fd_sc_hd__buf_2)
+                  0.17    0.35    6.54 ^ output96/X (sky130_fd_sc_hd__buf_2)
+     1    0.03                           mem_la_read (net)
+                  0.17    0.00    6.54 ^ mem_la_read (out)
+                                  6.54   data arrival time
+
+                         25.00   25.00   clock clk (rise edge)
+                          0.00   25.00   clock network delay (propagated)
+                         -0.25   24.75   clock uncertainty
+                          0.00   24.75   clock reconvergence pessimism
+                         -5.00   19.75   output external delay
+                                 19.75   data required time
+-----------------------------------------------------------------------------
+                                 19.75   data required time
+                                 -6.54   data arrival time
+-----------------------------------------------------------------------------
+                                 13.21   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+max slew
+
+Pin                                    Limit    Slew   Slack
+------------------------------------------------------------
+_08010_/A2                              0.75    0.78   -0.03 (VIOLATED)
+_08009_/Y                               0.75    0.78   -0.03 (VIOLATED)
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+_14507_/X                                10     21    -11 (VIOLATED)
+_07613_/Y                                10     20    -10 (VIOLATED)
+_07614_/X                                10     20    -10 (VIOLATED)
+_07615_/Y                                10     20    -10 (VIOLATED)
+_07617_/X                                10     20    -10 (VIOLATED)
+_07618_/X                                10     20    -10 (VIOLATED)
+_07643_/X                                10     20    -10 (VIOLATED)
+_07659_/X                                10     20    -10 (VIOLATED)
+_07679_/X                                10     20    -10 (VIOLATED)
+_07680_/X                                10     20    -10 (VIOLATED)
+_07681_/X                                10     20    -10 (VIOLATED)
+_07686_/X                                10     20    -10 (VIOLATED)
+_07687_/X                                10     20    -10 (VIOLATED)
+_07699_/X                                10     20    -10 (VIOLATED)
+_07702_/X                                10     20    -10 (VIOLATED)
+_07703_/X                                10     20    -10 (VIOLATED)
+_07704_/X                                10     20    -10 (VIOLATED)
+_07712_/X                                10     20    -10 (VIOLATED)
+_07713_/X                                10     20    -10 (VIOLATED)
+_07715_/X                                10     20    -10 (VIOLATED)
+_07720_/X                                10     20    -10 (VIOLATED)
+_07733_/X                                10     20    -10 (VIOLATED)
+_07738_/X                                10     20    -10 (VIOLATED)
+_07751_/X                                10     20    -10 (VIOLATED)
+_07755_/X                                10     20    -10 (VIOLATED)
+_07759_/X                                10     20    -10 (VIOLATED)
+_07762_/X                                10     20    -10 (VIOLATED)
+_07767_/X                                10     20    -10 (VIOLATED)
+_07790_/X                                10     20    -10 (VIOLATED)
+_07796_/X                                10     20    -10 (VIOLATED)
+_07797_/X                                10     20    -10 (VIOLATED)
+_07817_/X                                10     20    -10 (VIOLATED)
+_07829_/X                                10     20    -10 (VIOLATED)
+_08255_/X                                10     20    -10 (VIOLATED)
+_08335_/X                                10     20    -10 (VIOLATED)
+_08338_/X                                10     20    -10 (VIOLATED)
+_08340_/X                                10     20    -10 (VIOLATED)
+_08432_/X                                10     20    -10 (VIOLATED)
+_08436_/X                                10     20    -10 (VIOLATED)
+_08444_/X                                10     20    -10 (VIOLATED)
+_08445_/X                                10     20    -10 (VIOLATED)
+_08497_/X                                10     20    -10 (VIOLATED)
+_08508_/X                                10     20    -10 (VIOLATED)
+_08509_/X                                10     20    -10 (VIOLATED)
+_08864_/X                                10     20    -10 (VIOLATED)
+_08961_/X                                10     20    -10 (VIOLATED)
+_08966_/X                                10     20    -10 (VIOLATED)
+_08992_/X                                10     20    -10 (VIOLATED)
+_08993_/Y                                10     20    -10 (VIOLATED)
+_08994_/X                                10     20    -10 (VIOLATED)
+_08995_/X                                10     20    -10 (VIOLATED)
+_08996_/X                                10     20    -10 (VIOLATED)
+_08997_/X                                10     20    -10 (VIOLATED)
+_09000_/X                                10     20    -10 (VIOLATED)
+_09001_/X                                10     20    -10 (VIOLATED)
+_09005_/X                                10     20    -10 (VIOLATED)
+_09006_/X                                10     20    -10 (VIOLATED)
+_09007_/X                                10     20    -10 (VIOLATED)
+_09008_/X                                10     20    -10 (VIOLATED)
+_09011_/X                                10     20    -10 (VIOLATED)
+_09012_/X                                10     20    -10 (VIOLATED)
+_09013_/X                                10     20    -10 (VIOLATED)
+_09015_/X                                10     20    -10 (VIOLATED)
+_09018_/X                                10     20    -10 (VIOLATED)
+_09019_/X                                10     20    -10 (VIOLATED)
+_09020_/X                                10     20    -10 (VIOLATED)
+_09023_/X                                10     20    -10 (VIOLATED)
+_09024_/X                                10     20    -10 (VIOLATED)
+_09025_/X                                10     20    -10 (VIOLATED)
+_09026_/X                                10     20    -10 (VIOLATED)
+_09029_/X                                10     20    -10 (VIOLATED)
+_09030_/X                                10     20    -10 (VIOLATED)
+_09048_/X                                10     20    -10 (VIOLATED)
+_09061_/X                                10     20    -10 (VIOLATED)
+_09085_/X                                10     20    -10 (VIOLATED)
+_09133_/X                                10     20    -10 (VIOLATED)
+_09140_/X                                10     20    -10 (VIOLATED)
+_09144_/X                                10     20    -10 (VIOLATED)
+_09157_/X                                10     20    -10 (VIOLATED)
+_09177_/X                                10     20    -10 (VIOLATED)
+_09215_/X                                10     20    -10 (VIOLATED)
+_09231_/X                                10     20    -10 (VIOLATED)
+_09239_/X                                10     20    -10 (VIOLATED)
+_09246_/X                                10     20    -10 (VIOLATED)
+_09253_/X                                10     20    -10 (VIOLATED)
+_09262_/X                                10     20    -10 (VIOLATED)
+_09276_/X                                10     20    -10 (VIOLATED)
+_09291_/X                                10     20    -10 (VIOLATED)
+_09299_/X                                10     20    -10 (VIOLATED)
+_09307_/X                                10     20    -10 (VIOLATED)
+_09314_/X                                10     20    -10 (VIOLATED)
+_09343_/X                                10     20    -10 (VIOLATED)
+_09358_/X                                10     20    -10 (VIOLATED)
+_09382_/X                                10     20    -10 (VIOLATED)
+_09384_/X                                10     20    -10 (VIOLATED)
+_09385_/X                                10     20    -10 (VIOLATED)
+_09386_/X                                10     20    -10 (VIOLATED)
+_09387_/X                                10     20    -10 (VIOLATED)
+_09388_/X                                10     20    -10 (VIOLATED)
+_09389_/X                                10     20    -10 (VIOLATED)
+_09390_/X                                10     20    -10 (VIOLATED)
+_09391_/X                                10     20    -10 (VIOLATED)
+_09392_/X                                10     20    -10 (VIOLATED)
+_09393_/X                                10     20    -10 (VIOLATED)
+_09394_/X                                10     20    -10 (VIOLATED)
+_09395_/X                                10     20    -10 (VIOLATED)
+_09399_/X                                10     20    -10 (VIOLATED)
+_09401_/X                                10     20    -10 (VIOLATED)
+_09402_/X                                10     20    -10 (VIOLATED)
+_09409_/X                                10     20    -10 (VIOLATED)
+_09410_/X                                10     20    -10 (VIOLATED)
+_09413_/X                                10     20    -10 (VIOLATED)
+_09415_/X                                10     20    -10 (VIOLATED)
+_09420_/X                                10     20    -10 (VIOLATED)
+_09421_/X                                10     20    -10 (VIOLATED)
+_09448_/X                                10     20    -10 (VIOLATED)
+_09449_/X                                10     20    -10 (VIOLATED)
+_09450_/X                                10     20    -10 (VIOLATED)
+_09451_/X                                10     20    -10 (VIOLATED)
+_09454_/X                                10     20    -10 (VIOLATED)
+_09455_/X                                10     20    -10 (VIOLATED)
+_09457_/X                                10     20    -10 (VIOLATED)
+_09458_/X                                10     20    -10 (VIOLATED)
+_09461_/X                                10     20    -10 (VIOLATED)
+_09462_/X                                10     20    -10 (VIOLATED)
+_09463_/X                                10     20    -10 (VIOLATED)
+_09469_/X                                10     20    -10 (VIOLATED)
+_09470_/X                                10     20    -10 (VIOLATED)
+_09475_/X                                10     20    -10 (VIOLATED)
+_09478_/X                                10     20    -10 (VIOLATED)
+_09480_/X                                10     20    -10 (VIOLATED)
+_09481_/X                                10     20    -10 (VIOLATED)
+_09482_/X                                10     20    -10 (VIOLATED)
+_09485_/X                                10     20    -10 (VIOLATED)
+_09486_/X                                10     20    -10 (VIOLATED)
+_09487_/X                                10     20    -10 (VIOLATED)
+_09497_/X                                10     20    -10 (VIOLATED)
+_09498_/X                                10     20    -10 (VIOLATED)
+_09517_/X                                10     20    -10 (VIOLATED)
+_09524_/X                                10     20    -10 (VIOLATED)
+_09525_/X                                10     20    -10 (VIOLATED)
+_09526_/X                                10     20    -10 (VIOLATED)
+_09527_/X                                10     20    -10 (VIOLATED)
+_09528_/X                                10     20    -10 (VIOLATED)
+_09529_/X                                10     20    -10 (VIOLATED)
+_09530_/X                                10     20    -10 (VIOLATED)
+_09532_/X                                10     20    -10 (VIOLATED)
+_09537_/X                                10     20    -10 (VIOLATED)
+_09547_/X                                10     20    -10 (VIOLATED)
+_09548_/X                                10     20    -10 (VIOLATED)
+_09549_/X                                10     20    -10 (VIOLATED)
+_09550_/X                                10     20    -10 (VIOLATED)
+_09552_/X                                10     20    -10 (VIOLATED)
+_09554_/X                                10     20    -10 (VIOLATED)
+_09555_/X                                10     20    -10 (VIOLATED)
+_09557_/X                                10     20    -10 (VIOLATED)
+_09560_/X                                10     20    -10 (VIOLATED)
+_09562_/X                                10     20    -10 (VIOLATED)
+_09563_/X                                10     20    -10 (VIOLATED)
+_09565_/X                                10     20    -10 (VIOLATED)
+_09566_/X                                10     20    -10 (VIOLATED)
+_09568_/X                                10     20    -10 (VIOLATED)
+_09570_/X                                10     20    -10 (VIOLATED)
+_09573_/X                                10     20    -10 (VIOLATED)
+_09576_/X                                10     20    -10 (VIOLATED)
+_09587_/X                                10     20    -10 (VIOLATED)
+_09588_/X                                10     20    -10 (VIOLATED)
+_09589_/X                                10     20    -10 (VIOLATED)
+_09590_/X                                10     20    -10 (VIOLATED)
+_09593_/X                                10     20    -10 (VIOLATED)
+_09594_/X                                10     20    -10 (VIOLATED)
+_09596_/X                                10     20    -10 (VIOLATED)
+_09599_/X                                10     20    -10 (VIOLATED)
+_09602_/X                                10     20    -10 (VIOLATED)
+_09603_/X                                10     20    -10 (VIOLATED)
+_09605_/X                                10     20    -10 (VIOLATED)
+_09606_/X                                10     20    -10 (VIOLATED)
+_09610_/X                                10     20    -10 (VIOLATED)
+_09619_/X                                10     20    -10 (VIOLATED)
+_09620_/X                                10     20    -10 (VIOLATED)
+_09621_/X                                10     20    -10 (VIOLATED)
+_09623_/X                                10     20    -10 (VIOLATED)
+_09624_/X                                10     20    -10 (VIOLATED)
+_09626_/X                                10     20    -10 (VIOLATED)
+_09627_/X                                10     20    -10 (VIOLATED)
+_09628_/X                                10     20    -10 (VIOLATED)
+_09659_/X                                10     20    -10 (VIOLATED)
+_09673_/X                                10     20    -10 (VIOLATED)
+_09674_/X                                10     20    -10 (VIOLATED)
+_09675_/X                                10     20    -10 (VIOLATED)
+_09677_/X                                10     20    -10 (VIOLATED)
+_09678_/X                                10     20    -10 (VIOLATED)
+_09680_/X                                10     20    -10 (VIOLATED)
+_09681_/X                                10     20    -10 (VIOLATED)
+_09685_/X                                10     20    -10 (VIOLATED)
+_09699_/X                                10     20    -10 (VIOLATED)
+_09706_/X                                10     20    -10 (VIOLATED)
+_09712_/X                                10     20    -10 (VIOLATED)
+_09717_/X                                10     20    -10 (VIOLATED)
+_09719_/X                                10     20    -10 (VIOLATED)
+_09720_/X                                10     20    -10 (VIOLATED)
+_09724_/X                                10     20    -10 (VIOLATED)
+_09732_/X                                10     20    -10 (VIOLATED)
+_09757_/X                                10     20    -10 (VIOLATED)
+_09765_/X                                10     20    -10 (VIOLATED)
+_09767_/X                                10     20    -10 (VIOLATED)
+_09768_/X                                10     20    -10 (VIOLATED)
+_09797_/X                                10     20    -10 (VIOLATED)
+_09826_/X                                10     20    -10 (VIOLATED)
+_09833_/X                                10     20    -10 (VIOLATED)
+_09843_/X                                10     20    -10 (VIOLATED)
+_09858_/X                                10     20    -10 (VIOLATED)
+_09862_/X                                10     20    -10 (VIOLATED)
+_09867_/X                                10     20    -10 (VIOLATED)
+_09934_/X                                10     20    -10 (VIOLATED)
+_09936_/X                                10     20    -10 (VIOLATED)
+_09938_/X                                10     20    -10 (VIOLATED)
+_09943_/X                                10     20    -10 (VIOLATED)
+_10667_/X                                10     20    -10 (VIOLATED)
+_10738_/X                                10     20    -10 (VIOLATED)
+_10759_/X                                10     20    -10 (VIOLATED)
+_10808_/X                                10     20    -10 (VIOLATED)
+_10876_/X                                10     20    -10 (VIOLATED)
+_10944_/X                                10     20    -10 (VIOLATED)
+_10965_/X                                10     20    -10 (VIOLATED)
+_11012_/X                                10     20    -10 (VIOLATED)
+_11033_/X                                10     20    -10 (VIOLATED)
+_11080_/X                                10     20    -10 (VIOLATED)
+_11149_/X                                10     20    -10 (VIOLATED)
+_11170_/X                                10     20    -10 (VIOLATED)
+_11191_/X                                10     20    -10 (VIOLATED)
+_11218_/X                                10     20    -10 (VIOLATED)
+_11239_/X                                10     20    -10 (VIOLATED)
+_11260_/X                                10     20    -10 (VIOLATED)
+_11287_/X                                10     20    -10 (VIOLATED)
+_11302_/X                                10     20    -10 (VIOLATED)
+_11317_/X                                10     20    -10 (VIOLATED)
+_11324_/X                                10     20    -10 (VIOLATED)
+_11330_/X                                10     20    -10 (VIOLATED)
+_11333_/X                                10     20    -10 (VIOLATED)
+_11336_/X                                10     20    -10 (VIOLATED)
+_11339_/X                                10     20    -10 (VIOLATED)
+_11342_/X                                10     20    -10 (VIOLATED)
+_11348_/X                                10     20    -10 (VIOLATED)
+_11352_/X                                10     20    -10 (VIOLATED)
+_11355_/X                                10     20    -10 (VIOLATED)
+_11358_/X                                10     20    -10 (VIOLATED)
+_11370_/X                                10     20    -10 (VIOLATED)
+_11376_/X                                10     20    -10 (VIOLATED)
+_11382_/X                                10     20    -10 (VIOLATED)
+_11386_/X                                10     20    -10 (VIOLATED)
+_11407_/X                                10     20    -10 (VIOLATED)
+_11428_/X                                10     20    -10 (VIOLATED)
+_11455_/X                                10     20    -10 (VIOLATED)
+_11476_/X                                10     20    -10 (VIOLATED)
+_11497_/X                                10     20    -10 (VIOLATED)
+_11523_/X                                10     20    -10 (VIOLATED)
+_11544_/X                                10     20    -10 (VIOLATED)
+_11565_/X                                10     20    -10 (VIOLATED)
+_11591_/X                                10     20    -10 (VIOLATED)
+_11633_/X                                10     20    -10 (VIOLATED)
+_11659_/X                                10     20    -10 (VIOLATED)
+_11680_/X                                10     20    -10 (VIOLATED)
+_11701_/X                                10     20    -10 (VIOLATED)
+_11728_/X                                10     20    -10 (VIOLATED)
+_11730_/X                                10     20    -10 (VIOLATED)
+_11735_/X                                10     20    -10 (VIOLATED)
+_11744_/X                                10     20    -10 (VIOLATED)
+_11752_/X                                10     20    -10 (VIOLATED)
+_11861_/X                                10     20    -10 (VIOLATED)
+_11949_/X                                10     20    -10 (VIOLATED)
+_11950_/X                                10     20    -10 (VIOLATED)
+_12012_/X                                10     20    -10 (VIOLATED)
+_12020_/X                                10     20    -10 (VIOLATED)
+_12022_/X                                10     20    -10 (VIOLATED)
+_12037_/X                                10     20    -10 (VIOLATED)
+_12047_/X                                10     20    -10 (VIOLATED)
+_12070_/X                                10     20    -10 (VIOLATED)
+_12072_/X                                10     20    -10 (VIOLATED)
+_12085_/X                                10     20    -10 (VIOLATED)
+_12107_/X                                10     20    -10 (VIOLATED)
+_12269_/X                                10     20    -10 (VIOLATED)
+_12649_/X                                10     20    -10 (VIOLATED)
+_12664_/X                                10     20    -10 (VIOLATED)
+_12685_/X                                10     20    -10 (VIOLATED)
+_12719_/X                                10     20    -10 (VIOLATED)
+_12734_/X                                10     20    -10 (VIOLATED)
+_12736_/X                                10     20    -10 (VIOLATED)
+_12737_/X                                10     20    -10 (VIOLATED)
+_12738_/X                                10     20    -10 (VIOLATED)
+_12741_/X                                10     20    -10 (VIOLATED)
+_12742_/X                                10     20    -10 (VIOLATED)
+_12744_/X                                10     20    -10 (VIOLATED)
+_12757_/X                                10     20    -10 (VIOLATED)
+_12771_/X                                10     20    -10 (VIOLATED)
+_12776_/X                                10     20    -10 (VIOLATED)
+_12777_/X                                10     20    -10 (VIOLATED)
+_12780_/X                                10     20    -10 (VIOLATED)
+_12781_/X                                10     20    -10 (VIOLATED)
+_12786_/X                                10     20    -10 (VIOLATED)
+_12815_/X                                10     20    -10 (VIOLATED)
+_12816_/X                                10     20    -10 (VIOLATED)
+_12817_/X                                10     20    -10 (VIOLATED)
+_12819_/X                                10     20    -10 (VIOLATED)
+_12820_/X                                10     20    -10 (VIOLATED)
+_12822_/X                                10     20    -10 (VIOLATED)
+_12826_/X                                10     20    -10 (VIOLATED)
+_12828_/X                                10     20    -10 (VIOLATED)
+_12829_/X                                10     20    -10 (VIOLATED)
+_12840_/X                                10     20    -10 (VIOLATED)
+_12841_/X                                10     20    -10 (VIOLATED)
+_12842_/X                                10     20    -10 (VIOLATED)
+_12853_/X                                10     20    -10 (VIOLATED)
+_12854_/X                                10     20    -10 (VIOLATED)
+_12855_/X                                10     20    -10 (VIOLATED)
+_12857_/X                                10     20    -10 (VIOLATED)
+_12859_/X                                10     20    -10 (VIOLATED)
+_12860_/X                                10     20    -10 (VIOLATED)
+_12864_/X                                10     20    -10 (VIOLATED)
+_12910_/X                                10     20    -10 (VIOLATED)
+_12911_/X                                10     20    -10 (VIOLATED)
+_12918_/X                                10     20    -10 (VIOLATED)
+_12925_/X                                10     20    -10 (VIOLATED)
+_12936_/X                                10     20    -10 (VIOLATED)
+_12938_/X                                10     20    -10 (VIOLATED)
+_12943_/X                                10     20    -10 (VIOLATED)
+_12959_/X                                10     20    -10 (VIOLATED)
+_12964_/X                                10     20    -10 (VIOLATED)
+_13017_/X                                10     20    -10 (VIOLATED)
+_13052_/X                                10     20    -10 (VIOLATED)
+_13072_/X                                10     20    -10 (VIOLATED)
+_13087_/X                                10     20    -10 (VIOLATED)
+_13092_/X                                10     20    -10 (VIOLATED)
+_13102_/X                                10     20    -10 (VIOLATED)
+_13105_/X                                10     20    -10 (VIOLATED)
+_13114_/X                                10     20    -10 (VIOLATED)
+_13135_/X                                10     20    -10 (VIOLATED)
+_13146_/X                                10     20    -10 (VIOLATED)
+_13147_/X                                10     20    -10 (VIOLATED)
+_13158_/X                                10     20    -10 (VIOLATED)
+_13161_/X                                10     20    -10 (VIOLATED)
+_13172_/X                                10     20    -10 (VIOLATED)
+_13174_/X                                10     20    -10 (VIOLATED)
+_13181_/X                                10     20    -10 (VIOLATED)
+_13192_/X                                10     20    -10 (VIOLATED)
+_13202_/X                                10     20    -10 (VIOLATED)
+_13252_/X                                10     20    -10 (VIOLATED)
+_13259_/X                                10     20    -10 (VIOLATED)
+_13266_/X                                10     20    -10 (VIOLATED)
+_13300_/X                                10     20    -10 (VIOLATED)
+_13305_/X                                10     20    -10 (VIOLATED)
+_13358_/X                                10     20    -10 (VIOLATED)
+_13383_/X                                10     20    -10 (VIOLATED)
+_13393_/X                                10     20    -10 (VIOLATED)
+_13413_/X                                10     20    -10 (VIOLATED)
+_13428_/X                                10     20    -10 (VIOLATED)
+_13433_/X                                10     20    -10 (VIOLATED)
+_13443_/X                                10     20    -10 (VIOLATED)
+_13997_/X                                10     20    -10 (VIOLATED)
+_14085_/X                                10     20    -10 (VIOLATED)
+_14106_/X                                10     20    -10 (VIOLATED)
+_14127_/X                                10     20    -10 (VIOLATED)
+_14256_/X                                10     20    -10 (VIOLATED)
+_14277_/X                                10     20    -10 (VIOLATED)
+_14298_/X                                10     20    -10 (VIOLATED)
+_14324_/X                                10     20    -10 (VIOLATED)
+_14345_/X                                10     20    -10 (VIOLATED)
+_14366_/X                                10     20    -10 (VIOLATED)
+_14392_/X                                10     20    -10 (VIOLATED)
+_14413_/X                                10     20    -10 (VIOLATED)
+_14434_/X                                10     20    -10 (VIOLATED)
+_14461_/X                                10     20    -10 (VIOLATED)
+_14498_/X                                10     20    -10 (VIOLATED)
+_14504_/X                                10     20    -10 (VIOLATED)
+_14510_/X                                10     20    -10 (VIOLATED)
+_14516_/X                                10     20    -10 (VIOLATED)
+_14522_/X                                10     20    -10 (VIOLATED)
+_14532_/X                                10     20    -10 (VIOLATED)
+_14535_/X                                10     20    -10 (VIOLATED)
+_14544_/X                                10     20    -10 (VIOLATED)
+_14560_/X                                10     20    -10 (VIOLATED)
+_14581_/X                                10     20    -10 (VIOLATED)
+_14628_/X                                10     20    -10 (VIOLATED)
+_14649_/X                                10     20    -10 (VIOLATED)
+_14696_/X                                10     20    -10 (VIOLATED)
+_14765_/X                                10     20    -10 (VIOLATED)
+_14833_/X                                10     20    -10 (VIOLATED)
+_14901_/X                                10     20    -10 (VIOLATED)
+_14969_/X                                10     20    -10 (VIOLATED)
+_15037_/X                                10     20    -10 (VIOLATED)
+_15105_/X                                10     20    -10 (VIOLATED)
+_15237_/X                                10     20    -10 (VIOLATED)
+_16133_/Q                                10     20    -10 (VIOLATED)
+_16142_/Q                                10     20    -10 (VIOLATED)
+_16187_/Q                                10     20    -10 (VIOLATED)
+_16255_/Q                                10     20    -10 (VIOLATED)
+fanout249/X                              10     20    -10 (VIOLATED)
+fanout250/X                              10     20    -10 (VIOLATED)
+fanout251/X                              10     20    -10 (VIOLATED)
+fanout252/X                              10     20    -10 (VIOLATED)
+fanout253/X                              10     20    -10 (VIOLATED)
+_07725_/Y                                10     18     -8 (VIOLATED)
+_09028_/Y                                10     18     -8 (VIOLATED)
+_09383_/Y                                10     18     -8 (VIOLATED)
+_12813_/X                                10     18     -8 (VIOLATED)
+_15352_/Q                                10     18     -8 (VIOLATED)
+_16126_/Q                                10     18     -8 (VIOLATED)
+_16130_/Q                                10     18     -8 (VIOLATED)
+_16132_/Q                                10     18     -8 (VIOLATED)
+_16135_/Q                                10     18     -8 (VIOLATED)
+_16139_/Q                                10     18     -8 (VIOLATED)
+_16140_/Q                                10     18     -8 (VIOLATED)
+_16141_/Q                                10     18     -8 (VIOLATED)
+_16143_/Q                                10     18     -8 (VIOLATED)
+_16144_/Q                                10     18     -8 (VIOLATED)
+_16338_/Q                                10     18     -8 (VIOLATED)
+_16339_/Q                                10     18     -8 (VIOLATED)
+_16340_/Q                                10     18     -8 (VIOLATED)
+input34/X                                10     18     -8 (VIOLATED)
+_15351_/Q                                10     16     -6 (VIOLATED)
+_15354_/Q                                10     16     -6 (VIOLATED)
+_15359_/Q                                10     16     -6 (VIOLATED)
+_15363_/Q                                10     16     -6 (VIOLATED)
+_15367_/Q                                10     16     -6 (VIOLATED)
+_15368_/Q                                10     16     -6 (VIOLATED)
+_15372_/Q                                10     16     -6 (VIOLATED)
+_15928_/Q                                10     16     -6 (VIOLATED)
+_16134_/Q                                10     16     -6 (VIOLATED)
+_16136_/Q                                10     16     -6 (VIOLATED)
+_16137_/Q                                10     16     -6 (VIOLATED)
+_16145_/Q                                10     16     -6 (VIOLATED)
+_16440_/Q                                10     16     -6 (VIOLATED)
+_16441_/Q                                10     16     -6 (VIOLATED)
+_16514_/Q                                10     16     -6 (VIOLATED)
+clkbuf_2_0_0_clk/X                       10     16     -6 (VIOLATED)
+clkbuf_2_1_0_clk/X                       10     16     -6 (VIOLATED)
+clkbuf_2_2_0_clk/X                       10     16     -6 (VIOLATED)
+clkbuf_2_3_0_clk/X                       10     16     -6 (VIOLATED)
+_15360_/Q                                10     15     -5 (VIOLATED)
+_07664_/X                                10     14     -4 (VIOLATED)
+_07716_/Y                                10     14     -4 (VIOLATED)
+_09129_/X                                10     14     -4 (VIOLATED)
+_09156_/Y                                10     14     -4 (VIOLATED)
+_12648_/X                                10     14     -4 (VIOLATED)
+_15350_/Q                                10     14     -4 (VIOLATED)
+_15353_/Q                                10     14     -4 (VIOLATED)
+_15355_/Q                                10     14     -4 (VIOLATED)
+_15357_/Q                                10     14     -4 (VIOLATED)
+_15361_/Q                                10     14     -4 (VIOLATED)
+_15362_/Q                                10     14     -4 (VIOLATED)
+_15364_/Q                                10     14     -4 (VIOLATED)
+_15366_/Q                                10     14     -4 (VIOLATED)
+_15369_/Q                                10     14     -4 (VIOLATED)
+_15371_/Q                                10     14     -4 (VIOLATED)
+_15374_/Q                                10     14     -4 (VIOLATED)
+_15921_/Q                                10     14     -4 (VIOLATED)
+_16115_/Q                                10     14     -4 (VIOLATED)
+_16138_/Q                                10     14     -4 (VIOLATED)
+_16146_/Q                                10     14     -4 (VIOLATED)
+_16248_/Q                                10     14     -4 (VIOLATED)
+_16345_/Q                                10     14     -4 (VIOLATED)
+_16350_/Q                                10     14     -4 (VIOLATED)
+_16354_/Q                                10     14     -4 (VIOLATED)
+_16359_/Q                                10     14     -4 (VIOLATED)
+_16360_/Q                                10     14     -4 (VIOLATED)
+_16362_/Q                                10     14     -4 (VIOLATED)
+_16363_/Q                                10     14     -4 (VIOLATED)
+_16364_/Q                                10     14     -4 (VIOLATED)
+_16365_/Q                                10     14     -4 (VIOLATED)
+_16366_/Q                                10     14     -4 (VIOLATED)
+_07646_/X                                10     12     -2 (VIOLATED)
+_07696_/Y                                10     12     -2 (VIOLATED)
+_07764_/Y                                10     12     -2 (VIOLATED)
+_08425_/X                                10     12     -2 (VIOLATED)
+_15340_/Q                                10     12     -2 (VIOLATED)
+_15344_/Q                                10     12     -2 (VIOLATED)
+_15349_/Q                                10     12     -2 (VIOLATED)
+_15356_/Q                                10     12     -2 (VIOLATED)
+_15358_/Q                                10     12     -2 (VIOLATED)
+_15365_/Q                                10     12     -2 (VIOLATED)
+_15370_/Q                                10     12     -2 (VIOLATED)
+_16237_/Q                                10     12     -2 (VIOLATED)
+_16244_/Q                                10     12     -2 (VIOLATED)
+_16245_/Q                                10     12     -2 (VIOLATED)
+_16246_/Q                                10     12     -2 (VIOLATED)
+_16247_/Q                                10     12     -2 (VIOLATED)
+_16344_/Q                                10     12     -2 (VIOLATED)
+_16346_/Q                                10     12     -2 (VIOLATED)
+_16347_/Q                                10     12     -2 (VIOLATED)
+_16348_/Q                                10     12     -2 (VIOLATED)
+_16349_/Q                                10     12     -2 (VIOLATED)
+_16351_/Q                                10     12     -2 (VIOLATED)
+_16352_/Q                                10     12     -2 (VIOLATED)
+_16353_/Q                                10     12     -2 (VIOLATED)
+_16355_/Q                                10     12     -2 (VIOLATED)
+_16356_/Q                                10     12     -2 (VIOLATED)
+_16357_/Q                                10     12     -2 (VIOLATED)
+_16358_/Q                                10     12     -2 (VIOLATED)
+_16361_/Q                                10     12     -2 (VIOLATED)
+_16438_/Q                                10     12     -2 (VIOLATED)
+_16439_/Q                                10     12     -2 (VIOLATED)
+_16442_/Q                                10     12     -2 (VIOLATED)
+_08262_/X                                10     11        (VIOLATED)
+_09365_/X                                10     11        (VIOLATED)
+_14479_/X                                10     11        (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 173 unannotated drivers.
+ irq[0]
+ irq[10]
+ irq[11]
+ irq[12]
+ irq[13]
+ irq[14]
+ irq[15]
+ irq[16]
+ irq[17]
+ irq[18]
+ irq[19]
+ irq[1]
+ irq[20]
+ irq[21]
+ irq[22]
+ irq[23]
+ irq[24]
+ irq[25]
+ irq[26]
+ irq[27]
+ irq[28]
+ irq[29]
+ irq[2]
+ irq[30]
+ irq[31]
+ irq[3]
+ irq[4]
+ irq[5]
+ irq[6]
+ irq[7]
+ irq[8]
+ irq[9]
+ pcpi_rd[0]
+ pcpi_rd[10]
+ pcpi_rd[11]
+ pcpi_rd[12]
+ pcpi_rd[13]
+ pcpi_rd[14]
+ pcpi_rd[15]
+ pcpi_rd[16]
+ pcpi_rd[17]
+ pcpi_rd[18]
+ pcpi_rd[19]
+ pcpi_rd[1]
+ pcpi_rd[20]
+ pcpi_rd[21]
+ pcpi_rd[22]
+ pcpi_rd[23]
+ pcpi_rd[24]
+ pcpi_rd[25]
+ pcpi_rd[26]
+ pcpi_rd[27]
+ pcpi_rd[28]
+ pcpi_rd[29]
+ pcpi_rd[2]
+ pcpi_rd[30]
+ pcpi_rd[31]
+ pcpi_rd[3]
+ pcpi_rd[4]
+ pcpi_rd[5]
+ pcpi_rd[6]
+ pcpi_rd[7]
+ pcpi_rd[8]
+ pcpi_rd[9]
+ pcpi_ready
+ pcpi_wait
+ pcpi_wr
+ picorv32_254/HI
+ picorv32_255/HI
+ picorv32_256/HI
+ picorv32_257/HI
+ picorv32_258/HI
+ picorv32_259/HI
+ picorv32_260/HI
+ picorv32_261/HI
+ picorv32_262/HI
+ picorv32_263/HI
+ picorv32_264/HI
+ picorv32_265/HI
+ picorv32_266/HI
+ picorv32_267/HI
+ picorv32_268/HI
+ picorv32_269/HI
+ picorv32_270/HI
+ picorv32_271/HI
+ picorv32_272/HI
+ picorv32_273/HI
+ picorv32_274/HI
+ picorv32_275/HI
+ picorv32_276/HI
+ picorv32_277/HI
+ picorv32_278/HI
+ picorv32_279/HI
+ picorv32_280/HI
+ picorv32_281/HI
+ picorv32_282/HI
+ picorv32_283/HI
+ picorv32_284/HI
+ picorv32_285/HI
+ picorv32_286/HI
+ picorv32_287/HI
+ picorv32_288/HI
+ picorv32_289/HI
+ picorv32_290/HI
+ picorv32_291/HI
+ picorv32_292/HI
+ picorv32_293/HI
+ picorv32_294/HI
+ picorv32_295/HI
+ picorv32_296/HI
+ picorv32_297/HI
+ picorv32_298/HI
+ picorv32_299/HI
+ picorv32_300/HI
+ picorv32_301/HI
+ picorv32_302/HI
+ picorv32_303/HI
+ picorv32_304/HI
+ picorv32_305/HI
+ picorv32_306/HI
+ picorv32_307/HI
+ picorv32_308/HI
+ picorv32_309/HI
+ picorv32_310/HI
+ picorv32_311/HI
+ picorv32_312/HI
+ picorv32_313/HI
+ picorv32_314/HI
+ picorv32_315/HI
+ picorv32_316/HI
+ picorv32_317/HI
+ picorv32_318/HI
+ picorv32_319/HI
+ picorv32_320/HI
+ picorv32_321/HI
+ picorv32_322/HI
+ picorv32_323/HI
+ picorv32_324/HI
+ picorv32_325/HI
+ picorv32_326/HI
+ picorv32_327/HI
+ picorv32_328/HI
+ picorv32_329/HI
+ picorv32_330/HI
+ picorv32_331/HI
+ picorv32_332/HI
+ picorv32_333/HI
+ picorv32_334/HI
+ picorv32_335/HI
+ picorv32_336/HI
+ picorv32_337/HI
+ picorv32_338/HI
+ picorv32_339/HI
+ picorv32_340/HI
+ picorv32_341/HI
+ picorv32_342/HI
+ picorv32_343/HI
+ picorv32_344/HI
+ picorv32_345/HI
+ picorv32_346/HI
+ picorv32_347/HI
+ picorv32_348/HI
+ picorv32_349/HI
+ picorv32_350/HI
+ picorv32_351/HI
+ picorv32_352/HI
+ picorv32_353/HI
+ picorv32_354/HI
+ picorv32_355/HI
+ picorv32_356/HI
+ picorv32_357/HI
+ picorv32_358/HI
+ picorv32_359/HI
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 2
+max fanout violation count 505
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 106 unconstrained endpoints.
+  eoi[0]
+  eoi[10]
+  eoi[11]
+  eoi[12]
+  eoi[13]
+  eoi[14]
+  eoi[15]
+  eoi[16]
+  eoi[17]
+  eoi[18]
+  eoi[19]
+  eoi[1]
+  eoi[20]
+  eoi[21]
+  eoi[22]
+  eoi[23]
+  eoi[24]
+  eoi[25]
+  eoi[26]
+  eoi[27]
+  eoi[28]
+  eoi[29]
+  eoi[2]
+  eoi[30]
+  eoi[31]
+  eoi[3]
+  eoi[4]
+  eoi[5]
+  eoi[6]
+  eoi[7]
+  eoi[8]
+  eoi[9]
+  mem_addr[0]
+  mem_addr[1]
+  mem_la_addr[0]
+  mem_la_addr[1]
+  pcpi_insn[0]
+  pcpi_insn[10]
+  pcpi_insn[11]
+  pcpi_insn[12]
+  pcpi_insn[13]
+  pcpi_insn[14]
+  pcpi_insn[15]
+  pcpi_insn[16]
+  pcpi_insn[17]
+  pcpi_insn[18]
+  pcpi_insn[19]
+  pcpi_insn[1]
+  pcpi_insn[20]
+  pcpi_insn[21]
+  pcpi_insn[22]
+  pcpi_insn[23]
+  pcpi_insn[24]
+  pcpi_insn[25]
+  pcpi_insn[26]
+  pcpi_insn[27]
+  pcpi_insn[28]
+  pcpi_insn[29]
+  pcpi_insn[2]
+  pcpi_insn[30]
+  pcpi_insn[31]
+  pcpi_insn[3]
+  pcpi_insn[4]
+  pcpi_insn[5]
+  pcpi_insn[6]
+  pcpi_insn[7]
+  pcpi_insn[8]
+  pcpi_insn[9]
+  pcpi_valid
+  trace_data[0]
+  trace_data[10]
+  trace_data[11]
+  trace_data[12]
+  trace_data[13]
+  trace_data[14]
+  trace_data[15]
+  trace_data[16]
+  trace_data[17]
+  trace_data[18]
+  trace_data[19]
+  trace_data[1]
+  trace_data[20]
+  trace_data[21]
+  trace_data[22]
+  trace_data[23]
+  trace_data[24]
+  trace_data[25]
+  trace_data[26]
+  trace_data[27]
+  trace_data[28]
+  trace_data[29]
+  trace_data[2]
+  trace_data[30]
+  trace_data[31]
+  trace_data[32]
+  trace_data[33]
+  trace_data[34]
+  trace_data[35]
+  trace_data[3]
+  trace_data[4]
+  trace_data[5]
+  trace_data[6]
+  trace_data[7]
+  trace_data[8]
+  trace_data[9]
+  trace_valid
